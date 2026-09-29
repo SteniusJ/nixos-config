@@ -1,4 +1,4 @@
-{ config, pkgs, local, ... }:
+{ config, pkgs, lib, local, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -55,6 +55,15 @@
     ".config/noctalia".source = dotfiles/noctalia;
     ".zshrc".source = dotfiles/.zshrc;
   };
+
+  home.activation.createUserDirectories = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p \
+      "$HOME/Documents" \
+      "$HOME/Downloads" \
+      "$HOME/Pictures" \
+      "$HOME/Videos" \
+      "$HOME/Music"
+    '';
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

@@ -11,7 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     steam
-    discord
+    discord-canary
     noctalia
     firefox
     zsh
@@ -33,6 +33,7 @@
     oh-my-zsh
     ly
     upower #laptop battery widget recognition
+    noisetorch
   ];
 
   fonts.packages = with pkgs; [

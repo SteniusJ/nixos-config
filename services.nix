@@ -19,6 +19,8 @@
 
   services.upower.enable = true;
 
+  programs.noisetorch.enable = true;
+
   programs.zsh = {
     enable = true;
     ohMyZsh.enable = true;
