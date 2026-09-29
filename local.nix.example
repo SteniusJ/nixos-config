@@ -1,0 +1,10 @@
+# This file tracks local variables like username, hostname etc
+# Populate this file with your own values and copy to /etc/nixos as local.nix
+ 
+{
+  username = "jshmo";
+  name = "Joe Shmoe";
+  hostname = "shmoe-pc";
+  email = "joe.shmoe@email.com";
+  gitname = "Shmoj";
+}
