@@ -17,6 +17,8 @@
     pulse.enable = true;
   };
 
+  services.upower.enable = true;
+
   programs.zsh = {
     enable = true;
     ohMyZsh.enable = true;

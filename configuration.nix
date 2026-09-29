@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      "/home/${local.username}/nixos-config/hardware-configuration.nix"
       ./hardware.nix
       ./services.nix
       ./packages.nix

@@ -32,6 +32,7 @@
     rustup
     oh-my-zsh
     ly
+    upower #laptop battery widget recognition
   ];
 
   fonts.packages = with pkgs; [
