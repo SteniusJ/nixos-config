@@ -1,18 +1,20 @@
 # This file defines enabled hardware features
 
-{ config, ... }:
+{ config, local, ... }:
 
 {
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
+  hardware.facter.reportPath = /home/${local.username}/${local.nixos-config-location}/facter.json;
   
-  # Enable hardware accelerated graphics
-  hardware.graphics = {
-    enable = true;
-  };
+  # # Enable bluetooth
+  # hardware.bluetooth.enable = true;
+  
+  # # Enable hardware accelerated graphics
+  # hardware.graphics = {
+  #   enable = true;
+  # };
 
-  # Load Nvidia Drivers
-  # services.xserver.videoDrivers = [ "nvidia" ];
+  # # Load Nvidia Drivers
+  # # services.xserver.videoDrivers = [ "nvidia" ];
   #
   # hardware.nvidia = {
   #   modesetting.enable = true;
