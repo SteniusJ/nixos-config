@@ -17,6 +17,13 @@
     pulse.enable = true;
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+  };
+  
   services.upower.enable = true;
 
   programs.noisetorch.enable = true;
@@ -25,7 +32,7 @@
     enable = true;
     ohMyZsh.enable = true;
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --impure --flake '$HOME/${local.nixos-config-location}#steniusj'";
+      rebuild = "sudo nixos-rebuild switch --impure --flake '/home/${local.username}/${local.nixos-config-location}#steniusj'";
       upgrade = "sudo nix flake update";
     };
   };
