@@ -24,6 +24,10 @@
   programs.zsh = {
     enable = true;
     ohMyZsh.enable = true;
+    shellAliases = {
+      rebuild = "sudo nixos-rebuild switch --impure --flake '$HOME/${local.nixos-config-location}#steniusj'";
+      upgrade = "sudo nix flake update";
+    };
   };
   users.extraUsers.${local.username} = {
     shell = pkgs.zsh;

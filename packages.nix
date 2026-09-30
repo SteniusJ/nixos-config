@@ -35,6 +35,8 @@
     upower #laptop battery widget recognition
     noisetorch
     davinci-resolve
+    lldb
+    gcc
   ];
 
   fonts.packages = with pkgs; [

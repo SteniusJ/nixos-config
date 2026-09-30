@@ -1,3 +1,4 @@
 local.nix
 hardware-configuration.nix
 facter.json
+flake.lock
