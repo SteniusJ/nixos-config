@@ -21,6 +21,8 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.kernelModules = [ "ntsync" ];
+
   networking.hostName = local.hostname; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -51,13 +53,18 @@
     LC_NUMERIC = "fi_FI.UTF-8";
     LC_PAPER = "fi_FI.UTF-8";
     LC_TELEPHONE = "fi_FI.UTF-8";
-    LC_TIME = "fi_FI.UTF-8";
   };
 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "fi";
     variant = "nodeadkeys";
+  };
+
+  # needed to set Xserver cursor for XWayland applications
+  environment.sessionVariables = {
+    XCURSOR_THEME = "capitaine-cursors";
+    XCURSOR_SIZE = 30;
   };
 
   # Configure console keymap
@@ -82,6 +89,19 @@
         _module.args.local = local;
         imports = [ ./home.nix ];
       };
+    };
+  };
+
+  fileSystems = {
+    "/mnt/HDD" = {
+      device = "/dev/sdb1";
+      fsType = "btrfs";
+      options = [ "defaults" "nofail" ];
+    };
+    "/mnt/SSD" = {
+      device = "/dev/sda1";
+      fsType = "btrfs";
+      options = [ "defaults" "nofail" ];
     };
   };
 

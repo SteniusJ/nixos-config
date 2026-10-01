@@ -22,7 +22,11 @@
     pear-desktop
     gimp
     yazi
-    btop
+    (btop.overrideAttrs (oldAttrs: {
+      cmakeFlags = (oldAttrs.cmakeFlags or []) ++ [
+        "-DBTOP_GPU=ON"
+      ];
+    }))
     kdePackages.dolphin
     kdePackages.kcalc
     rofi
@@ -33,13 +37,18 @@
     oh-my-zsh
     ly
     upower #laptop battery widget recognition
-    noisetorch
     davinci-resolve
     lldb
     gcc
+    multiviewer-for-f1
+    (ffmpeg-full.override { withUnfree = true; })
+    protonup-qt
+    wine
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    noto-fonts
+    noto-fonts-color-emoji
   ];
 }
