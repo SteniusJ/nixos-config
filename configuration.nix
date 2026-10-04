@@ -10,6 +10,7 @@
       "/home/${local.username}/${local.nixos-config-location}/hardware-configuration.nix"
       ./hardware.nix
       ./services.nix
+      ./programs.nix
       ./packages.nix
       inputs.home-manager.nixosModules.default
     ];
