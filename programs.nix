@@ -6,6 +6,7 @@
   programs.firefox.enable = true;
   programs.noctalia.enable = true;
   programs.git.enable = true;
+  programs.yazi.enable = true;
 
   programs.steam = {
     enable = true;

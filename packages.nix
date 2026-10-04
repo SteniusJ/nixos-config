@@ -25,8 +25,6 @@
     capitaine-cursors
     helix
     rustup
-    ly
-    upower #laptop battery widget recognition
     davinci-resolve
     lldb
     gcc

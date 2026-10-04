@@ -8,7 +8,14 @@
   # # Enable bluetooth
   # hardware.bluetooth.enable = true;
 
-  hardware.openrazer.enable = true;
+  hardware.openrazer = {
+   enable = true;
+   batteryNotifier = {
+    enable = true;
+    percentage = 10;
+   };
+   users = [ local.username ];
+  };
   
   # Enable hardware accelerated graphics
   hardware.graphics = {
