@@ -1,4 +1,4 @@
-{ local, ... }:
+{ pkgs, local, ... }:
 
 {
   programs.mango.enable = true;
