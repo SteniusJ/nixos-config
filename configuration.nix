@@ -12,6 +12,7 @@
       ./services.nix
       ./programs.nix
       ./packages.nix
+      ./vr-hotspot.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -62,12 +63,6 @@
     variant = "nodeadkeys";
   };
 
-  # needed to set Xserver cursor for XWayland applications
-  environment.sessionVariables = {
-    XCURSOR_THEME = "capitaine-cursors";
-    XCURSOR_SIZE = 30;
-  };
-
   # Configure console keymap
   console.keyMap = "fi";
 
@@ -94,13 +89,13 @@
   };
 
   fileSystems = {
-    "/mnt/HDD" = {
-      device = "/dev/sdb1";
+    "/mnt/SSD" = {
+      device = "/dev/disk/by-uuid/0cfe1e4c-58d4-42a0-bb09-474fbd1e6b77";
       fsType = "btrfs";
       options = [ "defaults" "nofail" ];
     };
-    "/mnt/SSD" = {
-      device = "/dev/sda1";
+    "/mnt/HDD" = {
+      device = "/dev/disk/by-uuid/ef5ae59d-9852-4496-bf36-72585fff059b";
       fsType = "btrfs";
       options = [ "defaults" "nofail" ];
     };

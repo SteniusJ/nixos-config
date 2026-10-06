@@ -32,6 +32,9 @@
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --impure --flake '/home/${local.username}/${local.nixos-config-location}#steniusj'";
       upgrade = "sudo nix flake update";
+      pkgs = "hx ~/${local.nixos-config-location}/packages.nix";
+      vr-hotspot-up = "nmcli connection up 'VR Hotspot'";
+      vr-hotspot-down = "nmcli connection down 'VR Hotspot'";
     };
   };
   users.extraUsers.${local.username} = {

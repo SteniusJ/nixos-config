@@ -8,4 +8,5 @@
   email = "joe.shmoe@email.com";
   gitname = "Shmoj";
   nixos-config-location = ".config/shmoj-nixos-config"; #relative path from home directory to your nixos config
+  vr-hotspot-passwd = "securevrhotspotpassword"; #stored in nix-store
 }
