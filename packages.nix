@@ -26,7 +26,6 @@
     rofi
     capitaine-cursors
     helix
-    rustup
     davinci-resolve
     lldb
     gcc
@@ -41,6 +40,9 @@
     usbutils
     heroic
     prismlauncher
+    libreoffice
+    unzip
+    wget
   ];
 
   fonts.packages = with pkgs; [
