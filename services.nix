@@ -16,6 +16,10 @@
     pulse.enable = true;
   };
 
+  services.tailscale = {
+    enable = true;
+  };
+
   xdg.portal = {
     enable = true;
     configPackages = with pkgs; [

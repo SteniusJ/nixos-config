@@ -9,12 +9,6 @@
     packageOverrides = pkgs: {};
   };
 
-  # binary caches
-  nix.settings = {
-    substituters = [ "https://cache.nixos-cuda.org" ];
-    trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
-  };
-
   environment.systemPackages = with pkgs; [
     discord-canary
     kitty
@@ -35,8 +29,6 @@
     wine
     razergenie
     (blender.override { cudaSupport = true; })
-    cudaPackages.cudatoolkit
-    cudaPackages.cudnn
     usbutils
     heroic
     prismlauncher

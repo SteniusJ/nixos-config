@@ -8,9 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, hytale-launcher, ... }@inputs:
     let
       local = import /etc/nixos/local.nix;
     in {
@@ -20,6 +22,11 @@
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+        {
+          environment.systemPackages = [
+            hytale-launcher.packages.x86_64-linux.default
+          ];
+        }
       ];
     };
   };
