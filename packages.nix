@@ -10,33 +10,17 @@
   };
 
   environment.systemPackages = with pkgs; [
-    steam
     discord-canary
-    noctalia
-    firefox
-    zsh
-    git
-    greetd
-    tuigreet
     kitty
     pear-desktop
     gimp
-    yazi
-    (btop.overrideAttrs (oldAttrs: {
-      cmakeFlags = (oldAttrs.cmakeFlags or []) ++ [
-        "-DBTOP_GPU=ON"
-      ];
-    }))
+    btop
     kdePackages.dolphin
     kdePackages.kcalc
     rofi
-    mango
     capitaine-cursors
     helix
-    rustup
-    oh-my-zsh
     ly
-    upower #laptop battery widget recognition
     davinci-resolve
     lldb
     gcc
@@ -44,6 +28,8 @@
     (ffmpeg-full.override { withUnfree = true; })
     protonup-qt
     wine
+    affinity-v3 #from flake
+    libreoffice
   ];
 
   fonts.packages = with pkgs; [

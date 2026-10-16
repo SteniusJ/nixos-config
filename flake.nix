@@ -8,6 +8,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -20,6 +22,9 @@
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+        ({ ... }: {
+          nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
+        })
       ];
     };
   };

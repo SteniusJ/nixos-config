@@ -93,19 +93,6 @@
     };
   };
 
-  fileSystems = {
-    "/mnt/HDD" = {
-      device = "/dev/sdb1";
-      fsType = "btrfs";
-      options = [ "defaults" "nofail" ];
-    };
-    "/mnt/SSD" = {
-      device = "/dev/sda1";
-      fsType = "btrfs";
-      options = [ "defaults" "nofail" ];
-    };
-  };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
