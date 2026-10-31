@@ -24,4 +24,5 @@
   };
   
   services.upower.enable = true;
+  services.tailscale.enable = true;
 }
