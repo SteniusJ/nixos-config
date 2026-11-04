@@ -43,6 +43,10 @@
         nmcli connection down 'VR Hotspot';
         nmcli radio wifi off;
         '';
+      nix-shell-init = ''
+        cp ~/${local.nixos-config-location}/shells/generic.nix shell.nix;
+        hx shell.nix;
+        '';
     };
 
     promptInit = ''

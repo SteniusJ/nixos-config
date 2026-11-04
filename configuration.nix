@@ -25,6 +25,14 @@
 
   boot.kernelModules = [ "ntsync" ];
 
+  boot.zswap = {
+    enable = true;
+    maxPoolPercent = 50;
+    shrinkerEnabled = true;
+    compressor = "zstd";
+    acceptThresholdPercent = 90;
+  };
+
   networking.hostName = local.hostname; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
